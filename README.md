@@ -1,8 +1,4 @@
-# bolkarasss
-
-A new Flutter application.
-
-## Getting Started
+## Features of the app
 
 - [x] Clean Code
 - [ ] Used Kotlin
