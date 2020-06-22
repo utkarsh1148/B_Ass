@@ -23,4 +23,4 @@ int listItem=0;
 double posx = 100.0;
 double posy = 100.0;
 var hello;
-
+int trigger=0;

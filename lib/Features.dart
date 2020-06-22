@@ -9,15 +9,7 @@ class Features extends StatefulWidget {
 class _Features extends State<Features>{
 
   List<_FeaturePhoto> _feature() {
-//    int j=0;
-//    for(int i=0;i<glo.data_.length;i++){
-//      if(glo.data_[i]['data']!=''){
-//        print("hi");
-//        j++;
-//      }
-//    }
-//
-//    glo.carouselNum=j;
+
     List<_FeaturePhoto> newalb=[];
     for(int i=0;i<glo.data_[glo.index]['data'].length;i++){
       newalb.add(_FeaturePhoto(imageURL: glo.data_[glo.index]['data'][i]['pF'],
@@ -26,9 +18,19 @@ class _Features extends State<Features>{
           featureString: 'Feature1'),
       );
     }
-
     glo.index++;
+    if(glo.trigger==1){
+      if(glo.index==1){
+        glo.index=4;
+      }
+    }
+    if(glo.index==5){
+      glo.trigger=1;
+      glo.index=0;
+    }
+    print(glo.index);
     return newalb;
+
   }
 
   @override
@@ -156,6 +158,7 @@ class _FeatureGridItem extends StatelessWidget {
                 if(glo.data_[i]['data'][j]['t']==featurePhoto.title){
                   glo.data_[i]['data'].removeAt(j);
                   glo.index=0;
+                  glo.trigger=0;
                   Navigator.of(context).pushReplacement(
                       new MaterialPageRoute(builder: (context) => new MyAppp()));
                 }

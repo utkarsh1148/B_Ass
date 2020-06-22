@@ -15,7 +15,7 @@ class MyAppp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           leading: Icon(Icons.keyboard_backspace),
-            ),
+            title: Text('Bolkar Assignment'),),
      body: MyHomePage()
     ));
   }

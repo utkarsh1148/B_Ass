@@ -9,15 +9,17 @@ Future<String> fetchAlbum() async {
   if (response.statusCode == 200) {
     var data=json.decode(utf8.decode(response.bodyBytes));
     glo.data_=data;
-    int i=0;
-    while(data[i]['title']!=''){
-      i++;
-    }
-    glo.carouselNum=i;
+//    int i=0;
+////    glo.data_[0]['title']='hi';
+//    while(glo.data_[i]['data']!=''){
+//      i++;
+//    }
+    glo.carouselNum=glo.data_.length;
+
   } else {
     throw Exception('Failed to load album');
   }
-  print(glo.data_.runtimeType);
+
 
   return 'Success';
 }
